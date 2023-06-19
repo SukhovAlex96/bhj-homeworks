@@ -1,3 +1,4 @@
+countdown();
 function countdown(){
     seconds = (document.getElementById("timer").textContent) --;
     if (seconds <= 0){
