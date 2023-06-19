@@ -1,12 +1,10 @@
-const clickSpeed = document.getElementById("click_speed");
-let count = 0;
-let lastClik = nall;
+let clickSpeed = document.getElementById("click_speed");
+let timeStart = new Data();
 
-clickSpeed.onclick = function(){
-    count += 1;
-    document.getElementById("click_speed").textContent = count.toString();
-    clickSpeed.width = (count % 2 === 1 ? 250 : 200);
-    if (lastClik != null)
-        document.getElementById("click_speed").innerHTML += '<dr/>Скорость клика:' + (1 / ((Date.now() - lastClik) / 1000)).toFixed(2);
-    lastClik = Date.now();
+function cookieCliker(){
+    click = (document.getElementById("click_counter").textContent)++
+    image.width = click++ % 2 ? 200 : 150;
 }
+
+let image = document.getElementById("cookie");
+image.onclick = cookieCliker;
