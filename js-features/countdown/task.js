@@ -1,10 +1,23 @@
-countdown();
-function countdown(){
-    seconds = (document.getElementById("timer").textContent) --;
-    if (seconds <= 0){
-        clearTimeout(timer);
-        alert("Вы победили в конкурсе!");
-    }else{
-        setTimeout(countdown, 1000);
-    }
+const timer = document.getElementById("timer");
+var cTime = timer.textContent;
+var cTimePath = cTime.split(":");
+
+if (cTimePath.length === 1) {
+    var nTime = parseInt(cTime);
+    var lSimpleFormat = true;
 }
+const addText = function(){
+        if (nTime > 0)
+        {
+            nTime -= 1;
+            if (lSimpleFormat)
+                timer.textContent = nTime;
+            if (nTime === 0) {
+                alert("Вы победили в конкурсе!");
+                var link = document.getElementById("link_complete");
+                link.click();
+            }
+        }
+    }
+
+    setInterval(addText, 1000);
