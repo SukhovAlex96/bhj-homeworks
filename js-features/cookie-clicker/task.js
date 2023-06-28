@@ -1,10 +1,8 @@
-let clickSpeed = document.getElementById("click_speed");
-let timeStart = new Data();
+const cookie = document.getElementById("cookie");
+let clickPress = 0;
 
-function cookieCliker(){
-    click = (document.getElementById("click_counter").textContent)++
-    image.width = click++ % 2 ? 200 : 150;
+cookie.onclick = function() {
+    clickPress += 1;
+    document.getElementById("clicker__counter").textContent = clickPress.toString();
+    cookie.width = (clickPress % 2 === 1 ? 200 : 150);
 }
-
-let image = document.getElementById("cookie");
-image.onclick = cookieCliker;
