@@ -6,6 +6,7 @@ if (cTimePath.length === 1) {
     var nTime = parseInt(cTime);
     var lSimpleFormat = true;
 }
+
 const addText = function(){
         if (nTime > 0)
         {
@@ -14,8 +15,6 @@ const addText = function(){
                 timer.textContent = nTime;
             if (nTime === 0) {
                 alert("Вы победили в конкурсе!");
-                var link = document.getElementById("link_complete");
-                link.click();
             }
         }
     }
