@@ -20,4 +20,4 @@ const addText = function(){
     }
 
     let timerId = setInterval(addText, 1000);
-    clearTimeout(clearTimeout);
+    clearTimeout(timerId);
