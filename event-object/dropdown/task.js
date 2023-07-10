@@ -7,7 +7,7 @@ for(var i = 0; i < btnElem.length; i++){
     };
 }
 
-var linkElem = document.getElementsByClassName("dropdown__list");
+var linkElem = document.getElementsByClassName("dropdown__link");
 
 for(let i = 0; i < linkElem.length; i ++){
     linkElem[i].onclick = function(){
