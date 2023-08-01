@@ -1,20 +1,21 @@
 const hasTooltips = document.querySelectorAll('.has-tooltip');
 
-hasTooltips.forEach((e) => {
-    let text = e.titel;
+hasTooltips.forEach((elem) => {
+    let text = elem.title;
     let tmpl = `<div class="tooltip" style="left: 0; top: 0" data-position="bottom">${text}</div>`;
-    e.insertAdjacentHTML('afterEnd', tmpl);
+    elem.insertAdjacentHTML('afterEnd', tmpl);
 });
 
 const tooltips = document.querySelectorAll('.tooltip');
-for (let i = 0; i < hasTooltips.length; i++){
+for (let i = 0; i < hasTooltips.length; i++) {
     hasTooltips[i].addEventListener('click', (e) => {
         e.preventDefault();
 
-        if(tooltips[i].classList.contains('tooltip_active')){
+        if (tooltips[i].classList.contains('tooltip_active')) {
             tooltips[i].classList.remove('tooltip_active');
-        }else{
-            if(document.querySelector('.tooltip_active')){
+        } 
+        else {
+            if (document.querySelector('.tooltip_active')) {
                 document.querySelector('.tooltip_active').classList.remove('tooltip_active');
             }
             tooltips[i].classList.add('tooltip_active');

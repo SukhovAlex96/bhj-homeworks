@@ -1,9 +1,9 @@
 let cartProducts = document.querySelector('.cart__products');
 let productQuantityControls = Array.from(document.querySelectorAll('.product__quantity-controls'));
 
-let productQuantityValue = () => {
+let productsQuantityValue = () => {
     productQuantityControls.forEach(el => {
-        let productQuantityValue = el.children[1];
+        let productQuantityValue = el.children[1];  
         el.addEventListener('click', (event) => {
             if (event.target.classList.contains('product__quantity-control_dec')) {
                 if (productQuantityValue.classList.contains('product__quantity-value') && productQuantityValue.textContent > 1) {
@@ -28,10 +28,10 @@ let productQuantityValue = () => {
                 <img class="cart__product-image" src="${productImage}">
                 <div class="cart__product-count">${productQuantityValue.textContent}</div>`
 
-                let arrCaetProduct = Array.from(cartProducts.children);
-
-                let coincidences = arrCaetProduct.find(item => item.getAttribute('id') === dataId);
-                if(arrCaetProduct.length > 0 && coincidences){
+                let arrCartProduct = Array.from(cartProducts.children);
+                
+                let coincidences = arrCartProduct.find(item => item.getAttribute('id') === dataId);
+                if (arrCartProduct.length > 0 && coincidences) {
                     let cartProductCount = coincidences.lastElementChild;
                     cartProductCount.textContent = (+cartProductCount.textContent) + (+productQuantityValue.textContent);
                     return
@@ -39,7 +39,7 @@ let productQuantityValue = () => {
                 cartProducts.appendChild(cartProduct)
             })
         }
-    })
-};
+    }) 
+}; 
 
-productQuantityValue();
+productsQuantityValue();
