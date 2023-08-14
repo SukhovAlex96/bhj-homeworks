@@ -1,7 +1,6 @@
-let textArea = document.getElementById('editor');
-
-textArea.addEventListener('input', () => {
-    localStorage.setItem('text', textArea.value)
-})
+const textArea = document.getElementById('editor');
 
 textArea.value = localStorage.getItem('text');
+textArea.oninput = () => {
+      localStorage.setItem('text', textArea.value)
+    };
